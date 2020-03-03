@@ -5,3 +5,5 @@ Some of these might not be finished or be very good but I am doing this for the 
 To anyone viewing this by some chance, enjoy. Take whatever you want either to learn from or expand what I have done.
 
 Also, Hi future me
+
+Hello past me
