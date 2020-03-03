@@ -34,7 +34,8 @@ def first_order(name_list, egg_amount_list, count):
     except ValueError:
         print("Please enter a number")
 
-def confirmation(name_list, )
+def confirmation(name_list):
+    print("i succ")
 
 while True:
     name_entry(name_list)
