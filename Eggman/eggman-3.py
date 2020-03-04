@@ -35,10 +35,21 @@ def first_order(name_list, egg_amount_list, count):
         print("Please enter a number")
 
 def confirmation(name_list):
-    print("i succ")
+    while True:
+        confirm = input("Is this correct (yes or no) ").strip().lower()
+        if confrim == "yes":
+            print("Order Success, Updating Records")
+            break
+        elif confirm == "no":
+            print("Order Aborted")
+            break
+        else:
+            print("please enter yes or no")
+
 
 while True:
     name_entry(name_list)
     if global_loop_variable == "new user":
         first_order(name_list, egg_amount_list, count)
+        confirmation(name_list)
         count += 1
