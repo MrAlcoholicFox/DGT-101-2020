@@ -1,8 +1,14 @@
 ################################################################################
 #todo list
-##Maybe use dictionary instead of new list
-#Make Validation
-##check that pc choice is in list
+##Maybe use dictionary instead of new list | Can't see this working
+#Make Validation | Completed
+##check that pc choice is in list | ?
+##Maybe make less try and except? | Nope
+##make it so that negative values don't work | Done
+##make it so that when the person is asked for the computer type and they put in-
+##something wrong then print something telling them that they put it wrong. | Pending
+##Add validation for the name entry | done
+##Add a last name | done
 ################################################################################
 
 #Dictionary and lists which contain info for the code to use
@@ -46,43 +52,74 @@ def menu():
 
 #defining the order function
 def order(computer_type_and_price):
+    #gets input from user for their first name and then validates it
+    user_first_name = ""
+    while len(user_first_name) < 2:
+        user_first_name = str(input("What is your first name? ")).strip()
+        if len(user_first_name) < 2:
+            print("Please enter your first name and don't leave it blank")
 
+    #Gets input from user for their last name and then validates it
+    user_last_name = ""
+    while len(user_last_name) < 4:
+        user_last_name = input("What is your last name? ").strip()
+        if len(user_last_name) < 4:
+            print("Please enter your last name and don't leave it blank")
+
+    #Get input from the user for their age and then validates it
     while True:
         try:
-            user_name = input("What is your name? ")
             user_age = int(input("What is your age? "))
-            global computer_choice
-            computer_choice = "None"
-            while computer_choice not in computer_type_and_price:
-                computer_choice = input("""Please enter the name of the setup that you want;
-                Home Basic
-                Office
-                Gamer
-                Studio
-                """).title()
-                print("")
-            global user_money
-            user_money = int(input("How much money do you have? "))
-            print("")
-            break
+            if user_age < 0:
+                raise ValueError
+            else:
+                break
         except ValueError:
-            print("Please Enter A Number")
+            print("Please Enter A Numerical Value")
+
+    #get input from the user for what computer type they want and then validate
+    global computer_choice
+    computer_choice = "None"
+    while computer_choice not in computer_type_and_price:
+        computer_choice = input("""Please enter the name of the setup that you want;
+        Home Basic
+        Office
+        Gamer
+        Studio
+        """).title()
+        print("")
+
+    #gets input from user for how much money they have and then validate it
+    global user_money
+    while True:
+        try:
+            user_money = int(input("How much money do you have? "))
+            if user_money < 0:
+                raise ValueError
+            else:
+                print("")
+                break
+        except ValueError:
+            print("Please Enter A Numerical Value")
+
     #if statements to decide what should happen
     if user_money >= computer_type_and_price[computer_choice]:
-        print("Congratulations {}, You can afford {}".format(user_name, computer_choice))
+        print("Congratulations {} {}, You can afford {}".format(user_first_name, user_last_name, computer_choice))
         print("The total cost will be ${}".format(computer_type_and_price[computer_choice]))
         while True:
             user_confirmation = input("Is this want you want (yes or no) ").lower().strip()
             if user_confirmation == "yes":
-                print("Thank you {} for your purchase".format(user_name))
+                print("Thank you {} {} for your purchase".format(user_first_name, user_last_name))
                 break
             elif user_confirmation == "no":
                 print("Order aborted, Please come again")
                 break
             else:
                 print("Please enter yes or no")
+
     elif user_money < computer_type_and_price[computer_choice] and user_age < 18:
         print("Sorry But You Cannot Afford The {} Setup And Since You Are Under 18 We Cannot Offer You Finance So Keep Saving".format(computer_choice))
+
     elif user_money < computer_type_and_price[computer_choice] and user_age >= 18:
         print("Sorry But You Cannot Afford The {} Setup, But Since You Are 18 Or Older If You Come In Store We Can Offer You Finance".format(computer_choice))
 
@@ -119,3 +156,4 @@ while True:
     else:
         print("Please Choose One Of The Options")
         print("")
+banner()
