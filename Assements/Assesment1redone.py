@@ -2,13 +2,15 @@
 #todo list
 ##Maybe use dictionary instead of new list | Can't see this working
 #Make Validation | Completed
-##check that pc choice is in list | ?
-##Maybe make less try and except? | Nope
+##check that pc choice is in list | No
+##Maybe make less try and except? | Done
 ##make it so that negative values don't work | Done
 ##make it so that when the person is asked for the computer type and they put in-
-##something wrong then print something telling them that they put it wrong. | Pending
+##something wrong then print something telling them that they put it wrong. | Done
 ##Add validation for the name entry | done
 ##Add a last name | done
+##Maybe make it so that when user denies order it takes them back to the menu
+##Make more comments | pending
 ################################################################################
 
 #Dictionary and lists which contain info for the code to use
@@ -53,6 +55,7 @@ def menu():
 #defining the order function
 def order(computer_type_and_price):
     #gets input from user for their first name and then validates it
+    #it also prevents from users entering a value less than 2 letters long
     user_first_name = ""
     while len(user_first_name) < 2:
         user_first_name = str(input("What is your first name? ")).strip()
@@ -70,12 +73,12 @@ def order(computer_type_and_price):
     while True:
         try:
             user_age = int(input("What is your age? "))
-            if user_age < 0:
+            if user_age < 13 or user_age > 110:
                 raise ValueError
             else:
                 break
         except ValueError:
-            print("Please Enter A Numerical Value")
+            print("Please Enter A Numerical Value Or Something Between The Age Boundaries of 13 - 110")
 
     #get input from the user for what computer type they want and then validate
     global computer_choice
@@ -88,6 +91,8 @@ def order(computer_type_and_price):
         Studio
         """).title()
         print("")
+        if computer_choice not in computer_type_and_price:
+            print("Please choose one of the choices")
 
     #gets input from user for how much money they have and then validate it
     global user_money
@@ -105,7 +110,7 @@ def order(computer_type_and_price):
     #if statements to decide what should happen
     if user_money >= computer_type_and_price[computer_choice]:
         print("Congratulations {} {}, You can afford {}".format(user_first_name, user_last_name, computer_choice))
-        print("The total cost will be ${}".format(computer_type_and_price[computer_choice]))
+        print("The total cost will be ${}, and your change will be {}".format(computer_type_and_price[computer_choice], (user_money - computer_type_and_price[computer_choice])))
         while True:
             user_confirmation = input("Is this want you want (yes or no) ").lower().strip()
             if user_confirmation == "yes":
