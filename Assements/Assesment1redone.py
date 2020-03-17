@@ -11,6 +11,7 @@
 ##Add a last name | done
 ##Maybe make it so that when user denies order it takes them back to the menu
 ##Make more comments | pending
+##Maybe make it so Y/N is a correct confirmation method
 ################################################################################
 
 #Dictionary and lists which contain info for the code to use
@@ -110,15 +111,18 @@ def order(computer_type_and_price):
     #if statements to decide what should happen
     if user_money >= computer_type_and_price[computer_choice]:
         print("Congratulations {} {}, You can afford {}".format(user_first_name, user_last_name, computer_choice))
-        print("The total cost will be ${}, and your change will be {}".format(computer_type_and_price[computer_choice], (user_money - computer_type_and_price[computer_choice])))
+        print("The total cost will be ${}, and your change will be ${}".format(computer_type_and_price[computer_choice], (user_money - computer_type_and_price[computer_choice])))
         while True:
             user_confirmation = input("Is this want you want (yes or no) ").lower().strip()
+            #Order Confirmed
             if user_confirmation == "yes":
                 print("Thank you {} {} for your purchase".format(user_first_name, user_last_name))
                 break
+            #order Aborted
             elif user_confirmation == "no":
                 print("Order aborted, Please come again")
                 break
+            #validation
             else:
                 print("Please enter yes or no")
 
