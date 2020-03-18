@@ -11,7 +11,7 @@
 ##Add a last name | done
 ##Maybe make it so that when user denies order it takes them back to the menu
 ##Make more comments | pending
-##Maybe make it so Y/N is a correct confirmation method
+##Maybe make it so Y/N is a correct confirmation method | Done
 ################################################################################
 
 #Dictionary and lists which contain info for the code to use
@@ -24,21 +24,23 @@ computer_monitors_list = ["20", "23", "27", "Dual 23"]
 def banner():
     print("""
 
-  |||                                 |||                                     |
-    |    |                           |   |                                    |
-    |                                |                                        |
-    |   ||    | | ||    ||||         |       ||||   | | ||   | |||   |    |  ||||    ||||   | ||   ||||
-    |    |    || |  |  |    |        |      |    |  || |  |  ||   |  |    |   |     |    |   |    |    |
-    |    |    |  |  |   ||           |      |    |  |  |  |  |    |  |    |   |     ||||||   |     ||
-    |    |    |  |  |     ||         |      |    |  |  |  |  ||   |  |    |   |     |        |       ||
-|   |    |    |  |  |  |    |        |   |  |    |  |  |  |  | |||   |   ||   |  |  |    |   |    |    |
- |||   |||||  |  |  |   ||||          |||    ||||   |  |  |  |        ||| |    ||    ||||    |     ||||
-                                                             |
-                                                             |
+  |||                   |||                 |||                                     |
+    |    |              ||                 |   |                                    |
+    |                  |                   |                                        |
+    |   ||    | | ||          ||||         |       ||||   | | ||   | |||   |    |  ||||    ||||   | ||
+    |    |    || |  |        |    |        |      |    |  || |  |  ||   |  |    |   |     |    |   |
+    |    |    |  |  |         ||           |      |    |  |  |  |  |    |  |    |   |     ||||||   |
+    |    |    |  |  |           ||         |      |    |  |  |  |  ||   |  |    |   |     |        |
+|   |    |    |  |  |        |    |        |   |  |    |  |  |  |  | |||   |   ||   |  |  |    |   |
+ |||   |||||  |  |  |         ||||          |||    ||||   |  |  |  |        ||| |    ||    ||||    |
+                                                                   |
+                                                                   |
+
 """)
 
 #Defining the menu function
 def menu():
+    #The main menu where the user chooses the option
     global mode
     while True:
         try:
@@ -48,6 +50,7 @@ def menu():
             3: Computer Specs
             """))
             return mode
+            #validation
         except ValueError:
             print("No number was entered, please try again")
             print("")
@@ -115,20 +118,22 @@ def order(computer_type_and_price):
         while True:
             user_confirmation = input("Is this want you want (yes or no) ").lower().strip()
             #Order Confirmed
-            if user_confirmation == "yes":
+            if user_confirmation == "yes" or user_confirmation == "y":
                 print("Thank you {} {} for your purchase".format(user_first_name, user_last_name))
                 break
             #order Aborted
-            elif user_confirmation == "no":
+            elif user_confirmation == "no" or user_confirmation == "n":
                 print("Order aborted, Please come again")
                 break
             #validation
             else:
                 print("Please enter yes or no")
 
+    #If statement for if the user cannnot get finance because they are under 18
     elif user_money < computer_type_and_price[computer_choice] and user_age < 18:
         print("Sorry But You Cannot Afford The {} Setup And Since You Are Under 18 We Cannot Offer You Finance So Keep Saving".format(computer_choice))
 
+    #If statement for if the user can get finance because they are 18 or older
     elif user_money < computer_type_and_price[computer_choice] and user_age >= 18:
         print("Sorry But You Cannot Afford The {} Setup, But Since You Are 18 Or Older If You Come In Store We Can Offer You Finance".format(computer_choice))
 
@@ -147,6 +152,7 @@ def computer_specs(computer_type_and_price, computer_type_list, computer_ram_lis
         i += 1
 
 
+#Main execution area
 banner()
 while True:
     menu()
