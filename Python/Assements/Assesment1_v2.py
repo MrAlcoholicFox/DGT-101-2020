@@ -113,7 +113,7 @@ def order(computer_type_and_price):
 
     #if statements to decide what should happen
     if user_money >= computer_type_and_price[computer_choice]:
-        print("Congratulations {} {}, You can afford {}".format(user_first_name, user_last_name, computer_choice))
+        print("Congratulations {} {}, You can afford the ${} computer".format(user_first_name, user_last_name, computer_choice))
         print("The total cost will be ${}, and your change will be ${}".format(computer_type_and_price[computer_choice], (user_money - computer_type_and_price[computer_choice])))
         while True:
             user_confirmation = input("Is this want you want (yes or no) ").lower().strip()
