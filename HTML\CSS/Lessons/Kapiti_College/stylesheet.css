@@ -1,4 +1,54 @@
+/* Colours used in site
+Blue #3e7bba
+maroon #800040
+grey #7f7f7f
+*/
 body{
   font-family:Tahoma;
-  colour: #3e7bba;
+  color: #3e7bba;
+}
+
+div.content {
+  width: 100%;
+  margin: auto;
+}
+
+div.banner {
+  background-color: #3e7bba;
+  color: #ffffff;
+  padding: 10px;
+}
+
+div.navigation {
+  /* Put Gradient Here */
+  background: -moz-linear-gradient(#18de6b, #ffffff); /*firefox*/
+
+  padding: 10px;
+  text-align: center;
+}
+
+div.main {
+  padding: 10px;
+}
+
+div.footer {
+  background-color: #3e7bba;
+  color: #ffffff;
+  padding: 10px;
+}
+
+a {
+  /* Navigation Links */
+  a.navigation {font-weight: bold;}
+  a.navigation:link {color: #3e7bba}; /*Blue*/
+  a.navigation:visited {color: #3e7bba;} /*Blue*/
+  a.navigation:hover {color: #800040;} /*maroon*/
+  a.navigation:active {color: #3e7bba;} /*blue*/
+
+  /* Normal Links */
+  a {font-weight: bold;}
+  a:link {color: #3e7bba;} /*Blue*/
+  a:visited {color: #7f7f7f;} /*Grey*/
+  a:hover {color: #800040;} /*maroon*/
+  a:active {color: #7f7f7f} /*grey*/
 }
