@@ -6,11 +6,15 @@ grey #7f7f7f
 body{
   font-family:Tahoma;
   color: #3e7bba;
+  background-color: #ADD1F6; /*light blue*/
 }
 
 div.content {
-  width: 100%;
+  width: 750px;
   margin: auto;
+  border-style: solid;
+  border-color: #3e7bba; /*dark blue*/
+  background-color: #ffffff; /*white*/
 }
 
 div.banner {
