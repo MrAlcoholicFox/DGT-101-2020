@@ -3,18 +3,96 @@ Blue #3e7bba
 maroon #800040
 grey #7f7f7f
 */
-body{
+
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  margin-left: 20px;
+  max-width: 300px
+}
+
+.callout-header {
+  padding: 25px 15px;
+  background: #555;
+  font-size: 30px;
+  color: white;
+}
+
+.callout-container {
+  padding: 15px;
+  background-color: #ccc;
+  color: black;
+}
+
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.closebtn:hover; {
+  color: lightgrey;
+}
+
+body {
   font-family:Tahoma;
-  color: #3e7bba;
-  background-color: #ADD1F6; /*light blue*/
+  color: #ffffff;
+  background-image: url('Images/nun.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0%;
+  right: 0%;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 0%;
+}
+
+.container:hover .overlay {
+  bottom: 0%;
+  height: 100
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 div.content {
-  width: 750px;
+  width: 80%;
   margin: auto;
   border-style: solid;
   border-color: #3e7bba; /*dark blue*/
-  background-color: #ffffff; /*white*/
+  background-color: #3e7bba; /*white*/
 }
 
 div.banner {
@@ -32,7 +110,7 @@ div.navigation {
 }
 
 div.main {
-  padding: 10px;
+  padding: 10px 30px 10px 30px;
 }
 
 div.footer {
