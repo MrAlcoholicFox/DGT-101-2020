@@ -1,1 +1,11 @@
- 
+
+.row div {
+  padding: 10px;
+  border: 1px solid black;
+  height: 30px;
+  float: left;
+}
+
+.row {
+  clear: both;
+}
