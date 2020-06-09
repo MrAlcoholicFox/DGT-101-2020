@@ -1,0 +1,42 @@
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+	background-color: #f0f0f0; /*very light grey*/
+}
+
+
+
+li {
+	
+	font-size: 14px;
+}
+
+div.content {
+	width: 90%;
+	margin: auto;
+	background-color: #ffffff; /*white*/
+	}
+
+div.navigation {
+	background-color: #6bcfed; /*blue*/
+	padding: 0 16px 14px 16px;
+	
+}
+div.banner {
+	background-color: #6bcfed /*blue*/
+}
+div.footer {
+	background-color: #6bcfed; /*blue*/
+	color: #ffffff;
+	padding: 5px;
+}
+
+
+/* Normal links */
+a {font-weight: bold;}
+a {text-decoration: none;} 
+a:link {color: #ffffff;} /*white*/
+a:visited {color: #f0f6f7;} /* light grey*/
+a:hover {color: #fff15c;} /*yellow*/
+a:active {color: #fff15c;} /*yellow*/
+
+
