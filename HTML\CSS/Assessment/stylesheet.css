@@ -1,13 +1,18 @@
 body {
   font-family: 'Ubuntu', sans-serif;
-	background-image: url(Images/background2.png);
-	background-repeat: no-repeat;
+	background-image: url(Images/background_1.png);
+	background-repeat: repeat-x;
 	background-color: #f0f0f0; /*very light grey*/
 }
 
 li {
 
 	font-size: 14px;
+}
+
+div.main {
+  padding-left: 10px;
+  color: crimson;
 }
 
 .centered {
@@ -45,6 +50,8 @@ div.footer {
 /* Normal links */
 a {font-weight: bold;}
 a {text-decoration: none;}
+a {padding-left: 10px;}
+a {margin-left: 20px;}
 a:link {color: #ffffff;} /*white*/
 a:visited {color: #f0f6f7;} /* light grey*/
 a:hover {color: #fff15c;} /*yellow*/
