@@ -12,11 +12,13 @@ li {
 
 .rounded {
   border-radius: 50%;
+  border-style: ridge;
 }
 
 div.main {
   padding-left: 10px;
   color: crimson;
+  text-align: center;
 }
 
 .centered {
@@ -34,20 +36,22 @@ div.content {
 	}
 
 div.navigation {
-	background-color: black; /*blue*/
+	background-color: black;
 	padding: 0 16px 14px 16px;
 
 }
 div.banner {
-	background-color: #6bcfed; /*blue*/
+	background-color: crimson;
 	padding-left: 50px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 div.footer {
-	background-color: #6bcfed; /*blue*/
-	color: #ffffff;
+	background-color: #3a423f; /*Grey*/
+  text-align: center;
+	color: Black;
 	padding: 5px;
+  font-size: 20px;
 }
 
 
