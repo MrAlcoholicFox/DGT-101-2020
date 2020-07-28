@@ -1,7 +1,7 @@
 body {
   font-family: 'Ubuntu', sans-serif;
-	background-image: url(Images/background_1.png);
-	background-repeat: repeat-x;
+	background-image: url(Images/background_big.png); /*Background image*/
+	background-repeat: no-repeat;
 	background-color: #f0f0f0; /*very light grey*/
 }
 
@@ -54,6 +54,15 @@ div.footer {
   font-size: 20px;
 }
 
+li {
+  font-size: 20px;
+  margin-left: 5px;
+  padding-bottom: 5px;
+}
+
+ol, ul {
+  text-align: left;
+}
 
 /* Normal links */
 a {font-weight: bold;}
