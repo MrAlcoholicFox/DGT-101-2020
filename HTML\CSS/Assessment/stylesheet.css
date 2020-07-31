@@ -3,6 +3,7 @@ body {
 	background-image: url(Images/background_big.png); /*Background image*/
 	background-repeat: no-repeat;
 	background-color: #f0f0f0; /*very light grey*/
+  padding-bottom: 20px;
 }
 
 li {
@@ -41,7 +42,7 @@ div.navigation {
 
 }
 div.banner {
-	background-color: crimson;
+	background-color: black;
 	padding-left: 50px;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -57,7 +58,7 @@ div.footer {
 li {
   font-size: 20px;
   margin-left: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 7px;
 }
 
 ol, ul {
